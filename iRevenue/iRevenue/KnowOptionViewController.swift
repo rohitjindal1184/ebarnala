@@ -36,8 +36,12 @@ class KnowOptionViewController: UIViewController {
     }
     @IBAction func callAction(){
         let url = NSURL(string: "tel://18001800168")
-        if (UIApplication.shared.canOpenURL(url as! URL)) {
-            UIApplication.shared.open(url as! URL, options: [:], completionHandler: nil)
+        if (UIApplication.shared.canOpenURL(url! as URL)) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+            } else {
+                // Fallback on earlier versions
+            }
         }
     }
     /*

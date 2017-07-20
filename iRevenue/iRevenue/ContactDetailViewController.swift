@@ -42,8 +42,12 @@ class ContactDetailViewController: UIViewController, UITableViewDelegate, UITabl
     @IBAction func callActionContact(_ sender:Any){
         let btn:UIButton = sender as! UIButton
         let url = NSURL(string: "tel://" + btn.title(for: .normal)!)
-        if (UIApplication.shared.canOpenURL(url as! URL)) {
-            UIApplication.shared.open(url as! URL, options: [:], completionHandler: nil)    
+        if (UIApplication.shared.canOpenURL(url! as URL)) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+            } else {
+                // Fallback on earlier versions
+            }    
     }
     }
     

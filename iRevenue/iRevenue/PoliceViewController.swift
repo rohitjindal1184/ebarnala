@@ -23,11 +23,31 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
     @IBOutlet weak var lblsspName: UILabel!
     @IBOutlet weak var lbldspLandline: UILabel!
     @IBOutlet weak var lbldspName: UILabel!
+    @IBOutlet var scroll:UIScrollView?
+    @IBOutlet weak var view3: UIView!
+    @IBOutlet weak var view2: UIView!
+    @IBOutlet weak var view1: UIView!
+
+    var sspObject:PFObject?
+    var dspObject:PFObject?
+    var PoliceObject:PFObject?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         MBProgressHUD.showAdded(to: self.view, animated: true)
         getArea()
         getSSP()
+        scroll?.contentSize = CGSize(width: 0, height: 1200)
+        view1.layer.borderColor = UIColor.colorFromCode(0x6AB193).cgColor
+        view2.layer.borderColor = UIColor.colorFromCode(0x6AB193).cgColor
+        view3.layer.borderColor = UIColor.colorFromCode(0x6AB193).cgColor
+        view1.layer.borderWidth = 2.0
+        view2.layer.borderWidth = 2.0
+        view3.layer.borderWidth = 2.0
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : UIColor.colorFromCode(0x6AB193)
+        ]
+        self.navigationController?.navigationBar.tintColor = UIColor.colorFromCode(0x6AB193)
         // Do any additional setup after loading the view.
     }
 
@@ -37,6 +57,7 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
     }
     func getArea() {
         let hospitalQuery = PFQuery(className: "VillagePolice")
+        hospitalQuery.limit = 1000
         hospitalQuery.findObjectsInBackground { (objects, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
             self.areas = objects
@@ -50,6 +71,7 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
         psDataQuery.whereKey("PS_id", equalTo: id)
         psDataQuery.findObjectsInBackground { (objects, error) in
             if let object = objects?[0] {
+                self.PoliceObject = object
                 MBProgressHUD.hide(for: self.view, animated: true)
                 self.lblPSName?.text = object.object(forKey: "PS_name") as? String
                 self.lblIncharge?.text = object.object(forKey: "Incharge") as? String
@@ -65,6 +87,7 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
         let psDataQuery = PFQuery(className: "DSP")
         psDataQuery.getObjectInBackground(withId: id, block: { (object, error) in
                 MBProgressHUD.hide(for: self.view, animated: true)
+                self.dspObject = object
                 self.lbldspName?.text = object?.object(forKey: "name") as? String
                 self.lbldspmobile?.text = object?.object(forKey: "phoneno") as? String
                 self.lbldspLandline?.text = object?.object(forKey: "mobile") as? String
@@ -75,6 +98,7 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
         psDataQuery.whereKey("isSSP", equalTo: true)
         psDataQuery.findObjectsInBackground { (objects, error) in
             if let object = objects?[0] {
+                self.sspObject = object
                 self.lblsspName?.text = object.object(forKey: "name") as? String
                 self.lblsspland?.text = object.object(forKey: "phoneno") as? String
                 self.lblsspname?.text = object.object(forKey: "mobile") as? String
@@ -84,14 +108,36 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
 
 
     }
+    @IBAction func actionBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+
     @IBAction func actionSelectArea(_ sender: Any) {
         let pickerVw = PickerView.instanceFromNib()
         pickerVw.frame = self.view.bounds
         pickerVw.delegate = self
-        pickerVw.arrayObj = areas
         pickerVw.key = "name"
+
+        pickerVw.arrayObj = areas!
         self.view.addSubview(pickerVw)
-        pickerVw.reloadObjects()
+    }
+    @IBAction func actionGetDirection(_ sender: Any) {
+        performSegue(withIdentifier: "DirectionVC", sender: sender)
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let btn = sender as? UIButton
+        var object:PFObject?
+        if btn?.tag == 2{
+            object = sspObject
+        }else if btn?.tag == 1{
+            object = dspObject
+        }else {
+            object = PoliceObject
+        }
+        let directionVC = segue.destination as? DirectionViewController
+        directionVC?.destination = CLLocation(latitude: Double((object?.object(forKey: "latitude") as? String)!)!, longitude: Double((object?.object(forKey: "longtitude") as? String)!)!)
+        directionVC?.navigationColor = UIColor.colorFromCode(0x6AB193)
+
     }
     func rowSelected(index: Int) {
         self.getPSData(id: (self.areas?[index].object(forKey: "PS_id") as? NSNumber)!)

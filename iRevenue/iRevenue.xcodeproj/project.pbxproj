@@ -11,6 +11,7 @@
 		ED157CD41ED1B3460019E1F5 /* KnowOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD31ED1B3460019E1F5 /* KnowOptionViewController.swift */; };
 		ED157CD71ED1C13A0019E1F5 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD61ED1C13A0019E1F5 /* ContactDetailViewController.swift */; };
 		ED157CD91ED1D0E80019E1F5 /* DirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD81ED1D0E80019E1F5 /* DirectionViewController.swift */; };
+		ED28BEF21F1B86D90036D6EB /* ElectricityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED28BEF11F1B86D90036D6EB /* ElectricityViewController.swift */; };
 		ED3CE7A51EF14A1F00E76E11 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3CE7A31EF14A1F00E76E11 /* Bolts.framework */; };
 		ED3CE7A81EF14A4900E76E11 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3CE7A71EF14A4900E76E11 /* AudioToolbox.framework */; };
 		ED3CE7AA1EF14A5100E76E11 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED3CE7A91EF14A5100E76E11 /* CFNetwork.framework */; };
@@ -27,6 +28,8 @@
 		ED3CE7C31EF2C9BF00E76E11 /* PoliceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3CE7C21EF2C9BF00E76E11 /* PoliceViewController.swift */; };
 		ED47CA341EE1831200583A27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED47CA331EE1831200583A27 /* GoogleService-Info.plist */; };
 		ED54B2B41F095B8C006B50C6 /* RevenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54B2B31F095B8C006B50C6 /* RevenueViewController.swift */; };
+		ED79374E1F1E200500E3847D /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79374D1F1E200500E3847D /* DepartmentViewController.swift */; };
+		ED7937501F1E25EF00E3847D /* DepartmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79374F1F1E25EF00E3847D /* DepartmentCollectionViewCell.swift */; };
 		ED86BD2D1ED0518300507D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD2C1ED0518300507D1C /* AppDelegate.swift */; };
 		ED86BD2F1ED0518300507D1C /* DashBoardiewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD2E1ED0518300507D1C /* DashBoardiewController.swift */; };
 		ED86BD321ED0518300507D1C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED86BD301ED0518300507D1C /* Main.storyboard */; };
@@ -48,6 +51,7 @@
 		ED157CD31ED1B3460019E1F5 /* KnowOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowOptionViewController.swift; sourceTree = "<group>"; };
 		ED157CD61ED1C13A0019E1F5 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		ED157CD81ED1D0E80019E1F5 /* DirectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionViewController.swift; sourceTree = "<group>"; };
+		ED28BEF11F1B86D90036D6EB /* ElectricityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ElectricityViewController.swift; sourceTree = "<group>"; };
 		ED3CE7A31EF14A1F00E76E11 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		ED3CE7A71EF14A4900E76E11 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		ED3CE7A91EF14A5100E76E11 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -64,6 +68,8 @@
 		ED3CE7C21EF2C9BF00E76E11 /* PoliceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoliceViewController.swift; sourceTree = "<group>"; };
 		ED47CA331EE1831200583A27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED54B2B31F095B8C006B50C6 /* RevenueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueViewController.swift; sourceTree = "<group>"; };
+		ED79374D1F1E200500E3847D /* DepartmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
+		ED79374F1F1E25EF00E3847D /* DepartmentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED86BD291ED0518300507D1C /* iRevenue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRevenue.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED86BD2C1ED0518300507D1C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED86BD2E1ED0518300507D1C /* DashBoardiewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashBoardiewController.swift; sourceTree = "<group>"; };
@@ -154,6 +160,9 @@
 				ED3CE7C01EF2C5B600E76E11 /* PickerView.xib */,
 				ED3CE7C21EF2C9BF00E76E11 /* PoliceViewController.swift */,
 				ED54B2B31F095B8C006B50C6 /* RevenueViewController.swift */,
+				ED28BEF11F1B86D90036D6EB /* ElectricityViewController.swift */,
+				ED79374D1F1E200500E3847D /* DepartmentViewController.swift */,
+				ED79374F1F1E25EF00E3847D /* DepartmentCollectionViewCell.swift */,
 			);
 			path = iRevenue;
 			sourceTree = "<group>";
@@ -330,13 +339,16 @@
 				ED54B2B41F095B8C006B50C6 /* RevenueViewController.swift in Sources */,
 				ED157CD41ED1B3460019E1F5 /* KnowOptionViewController.swift in Sources */,
 				ED86BD481ED19EB500507D1C /* RevenueDepttViewController.swift in Sources */,
+				ED7937501F1E25EF00E3847D /* DepartmentCollectionViewCell.swift in Sources */,
 				ED86BD461ED1996100507D1C /* FardViewController.swift in Sources */,
 				ED86BD2F1ED0518300507D1C /* DashBoardiewController.swift in Sources */,
 				ED157CD71ED1C13A0019E1F5 /* ContactDetailViewController.swift in Sources */,
 				ED86BD2D1ED0518300507D1C /* AppDelegate.swift in Sources */,
 				ED157CD91ED1D0E80019E1F5 /* DirectionViewController.swift in Sources */,
 				ED3CE7C31EF2C9BF00E76E11 /* PoliceViewController.swift in Sources */,
+				ED28BEF21F1B86D90036D6EB /* ElectricityViewController.swift in Sources */,
 				ED3CE7BF1EF2C59F00E76E11 /* PickerView.swift in Sources */,
+				ED79374E1F1E200500E3847D /* DepartmentViewController.swift in Sources */,
 				ED86BD441ED1947200507D1C /* TababarViewController.swift in Sources */,
 				ED86BD401ED1853300507D1C /* DashboardButton.swift in Sources */,
 				ED86BD4A1ED1A5A100507D1C /* RevenueInfoViewController.swift in Sources */,
@@ -468,6 +480,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iRevenue/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.a1distribute.iRevenue;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -489,6 +502,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = iRevenue/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.a1distribute.iRevenue;
 				PRODUCT_NAME = "$(TARGET_NAME)";

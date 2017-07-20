@@ -12,14 +12,17 @@ class DirectionViewController: UIViewController {
     @IBOutlet var webview: UIWebView?
     var currentlocation:CLLocation?
     var destination:CLLocation?
-
+    var navigationColor:UIColor = UIColor.black
     override func viewDidLoad() {
         super.viewDidLoad()
-        let current = String(format: "%f", (currentlocation?.coordinate.latitude)!) + "," + String(format: "%f", (currentlocation?.coordinate.longitude)!)
         let dest = String(format: "%f", (destination?.coordinate.latitude)!) + "," + String(format: "%f", (destination?.coordinate.longitude)!)
 
-        let url = URL(string: "http://maps.google.com/?saddr=" + current + "&daddr=" + dest)
+        let url = URL(string: "http://maps.google.com/?saddr=" + "My%20Location" + "&daddr=" + dest)
         webview?.loadRequest(URLRequest(url: url!))
+        self.navigationController?.navigationBar.titleTextAttributes = [
+            NSForegroundColorAttributeName : navigationColor
+        ]
+        self.navigationController?.navigationBar.tintColor = navigationColor
 
         // Do any additional setup after loading the view.
     }
