@@ -40,7 +40,22 @@ class DepartmentModal{
         elect.icon = #imageLiteral(resourceName: "electricity")
         elect.backGroundColor = UIColor.colorFromCode(0x02CBFF)
         
-        return [revnue, hospital,police, elect]
+        let education = DepartmentModal()
+        education.title = "Education"
+        education.icon = #imageLiteral(resourceName: "education")
+        education.backGroundColor = UIColor.colorFromCode(0xED4738)
+        
+        let welfare = DepartmentModal()
+        welfare.title = "Welfare"
+        welfare.icon = #imageLiteral(resourceName: "welfare")
+        welfare.backGroundColor = UIColor.colorFromCode(0x82C5E5)
+
+        let suvida = DepartmentModal()
+        suvida.title = "Suvida Kendra"
+        suvida.icon = #imageLiteral(resourceName: "suvida")
+        suvida.backGroundColor = UIColor.colorFromCode(0x6AB193)
+        
+        return [revnue, hospital,police, elect, education, welfare, suvida]
     }
 }
 

@@ -8,7 +8,8 @@
 
 import UIKit
 import CoreLocation
-class DirectionViewController: UIViewController {
+import MBProgressHUD
+class DirectionViewController: UIViewController,UIWebViewDelegate {
     @IBOutlet var webview: UIWebView?
     var currentlocation:CLLocation?
     var destination:CLLocation?
@@ -23,6 +24,7 @@ class DirectionViewController: UIViewController {
             NSForegroundColorAttributeName : navigationColor
         ]
         self.navigationController?.navigationBar.tintColor = navigationColor
+        MBProgressHUD.showAdded(to: self.view, animated: true)
 
         // Do any additional setup after loading the view.
     }
@@ -32,7 +34,10 @@ class DirectionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        MBProgressHUD.hide(for: self.view, animated: true)
 
+    }
     /*
     // MARK: - Navigation
 

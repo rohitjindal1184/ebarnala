@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		7F5DF06E0769F55650A35636 /* Pods_iRevenue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C197E42710846F6B182B3FFA /* Pods_iRevenue.framework */; };
+		ED1548FD1F30979E009EFAA9 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1548FB1F30979E009EFAA9 /* DetailTableViewCell.swift */; };
+		ED1548FE1F30979E009EFAA9 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1548FC1F30979E009EFAA9 /* DetailTableViewCell.xib */; };
+		ED1549001F309FB1009EFAA9 /* EducationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1548FF1F309FB1009EFAA9 /* EducationTableViewController.swift */; };
+		ED1549021F30B097009EFAA9 /* WelfareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1549011F30B096009EFAA9 /* WelfareTableViewController.swift */; };
 		ED157CD41ED1B3460019E1F5 /* KnowOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD31ED1B3460019E1F5 /* KnowOptionViewController.swift */; };
 		ED157CD71ED1C13A0019E1F5 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD61ED1C13A0019E1F5 /* ContactDetailViewController.swift */; };
 		ED157CD91ED1D0E80019E1F5 /* DirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD81ED1D0E80019E1F5 /* DirectionViewController.swift */; };
@@ -28,6 +32,7 @@
 		ED3CE7C31EF2C9BF00E76E11 /* PoliceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3CE7C21EF2C9BF00E76E11 /* PoliceViewController.swift */; };
 		ED47CA341EE1831200583A27 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED47CA331EE1831200583A27 /* GoogleService-Info.plist */; };
 		ED54B2B41F095B8C006B50C6 /* RevenueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED54B2B31F095B8C006B50C6 /* RevenueViewController.swift */; };
+		ED591FD91F2A2F4B00780B4E /* HospitalStaffViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED591FD81F2A2F4B00780B4E /* HospitalStaffViewController.swift */; };
 		ED79374E1F1E200500E3847D /* DepartmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79374D1F1E200500E3847D /* DepartmentViewController.swift */; };
 		ED7937501F1E25EF00E3847D /* DepartmentCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED79374F1F1E25EF00E3847D /* DepartmentCollectionViewCell.swift */; };
 		ED86BD2D1ED0518300507D1C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD2C1ED0518300507D1C /* AppDelegate.swift */; };
@@ -48,6 +53,10 @@
 		2F72973626A09547A387AF0F /* Pods-iRevenue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRevenue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iRevenue/Pods-iRevenue.debug.xcconfig"; sourceTree = "<group>"; };
 		8805110240C105AEAC6486CD /* Pods-iRevenue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRevenue.release.xcconfig"; path = "Pods/Target Support Files/Pods-iRevenue/Pods-iRevenue.release.xcconfig"; sourceTree = "<group>"; };
 		C197E42710846F6B182B3FFA /* Pods_iRevenue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iRevenue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED1548FB1F30979E009EFAA9 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		ED1548FC1F30979E009EFAA9 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
+		ED1548FF1F309FB1009EFAA9 /* EducationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationTableViewController.swift; sourceTree = "<group>"; };
+		ED1549011F30B096009EFAA9 /* WelfareTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelfareTableViewController.swift; sourceTree = "<group>"; };
 		ED157CD31ED1B3460019E1F5 /* KnowOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowOptionViewController.swift; sourceTree = "<group>"; };
 		ED157CD61ED1C13A0019E1F5 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		ED157CD81ED1D0E80019E1F5 /* DirectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +77,7 @@
 		ED3CE7C21EF2C9BF00E76E11 /* PoliceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PoliceViewController.swift; sourceTree = "<group>"; };
 		ED47CA331EE1831200583A27 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ED54B2B31F095B8C006B50C6 /* RevenueViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueViewController.swift; sourceTree = "<group>"; };
+		ED591FD81F2A2F4B00780B4E /* HospitalStaffViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HospitalStaffViewController.swift; sourceTree = "<group>"; };
 		ED79374D1F1E200500E3847D /* DepartmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentViewController.swift; sourceTree = "<group>"; };
 		ED79374F1F1E25EF00E3847D /* DepartmentCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepartmentCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED86BD291ED0518300507D1C /* iRevenue.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRevenue.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,6 +173,9 @@
 				ED28BEF11F1B86D90036D6EB /* ElectricityViewController.swift */,
 				ED79374D1F1E200500E3847D /* DepartmentViewController.swift */,
 				ED79374F1F1E25EF00E3847D /* DepartmentCollectionViewCell.swift */,
+				ED591FD81F2A2F4B00780B4E /* HospitalStaffViewController.swift */,
+				ED1548FF1F309FB1009EFAA9 /* EducationTableViewController.swift */,
+				ED1549011F30B096009EFAA9 /* WelfareTableViewController.swift */,
 			);
 			path = iRevenue;
 			sourceTree = "<group>";
@@ -171,6 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				ED86BD3F1ED1853300507D1C /* DashboardButton.swift */,
+				ED1548FB1F30979E009EFAA9 /* DetailTableViewCell.swift */,
+				ED1548FC1F30979E009EFAA9 /* DetailTableViewCell.xib */,
 			);
 			name = Subclass;
 			sourceTree = "<group>";
@@ -263,6 +278,7 @@
 				ED86BD371ED0518300507D1C /* LaunchScreen.storyboard in Resources */,
 				ED47CA341EE1831200583A27 /* GoogleService-Info.plist in Resources */,
 				ED86BD421ED1915D00507D1C /* Assets.xcassets in Resources */,
+				ED1548FE1F30979E009EFAA9 /* DetailTableViewCell.xib in Resources */,
 				ED86BD321ED0518300507D1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -339,6 +355,8 @@
 				ED54B2B41F095B8C006B50C6 /* RevenueViewController.swift in Sources */,
 				ED157CD41ED1B3460019E1F5 /* KnowOptionViewController.swift in Sources */,
 				ED86BD481ED19EB500507D1C /* RevenueDepttViewController.swift in Sources */,
+				ED1549001F309FB1009EFAA9 /* EducationTableViewController.swift in Sources */,
+				ED1549021F30B097009EFAA9 /* WelfareTableViewController.swift in Sources */,
 				ED7937501F1E25EF00E3847D /* DepartmentCollectionViewCell.swift in Sources */,
 				ED86BD461ED1996100507D1C /* FardViewController.swift in Sources */,
 				ED86BD2F1ED0518300507D1C /* DashBoardiewController.swift in Sources */,
@@ -350,8 +368,10 @@
 				ED3CE7BF1EF2C59F00E76E11 /* PickerView.swift in Sources */,
 				ED79374E1F1E200500E3847D /* DepartmentViewController.swift in Sources */,
 				ED86BD441ED1947200507D1C /* TababarViewController.swift in Sources */,
+				ED591FD91F2A2F4B00780B4E /* HospitalStaffViewController.swift in Sources */,
 				ED86BD401ED1853300507D1C /* DashboardButton.swift in Sources */,
 				ED86BD4A1ED1A5A100507D1C /* RevenueInfoViewController.swift in Sources */,
+				ED1548FD1F30979E009EFAA9 /* DetailTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +418,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: A-1 Technology Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: A-1 Technology Inc";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -447,7 +468,8 @@
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: A-1 Technology Inc";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: A-1 Technology Inc";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -473,6 +495,7 @@
 			baseConfigurationReference = 2F72973626A09547A387AF0F /* Pods-iRevenue.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 2KAL3NND99;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -495,6 +518,7 @@
 			baseConfigurationReference = 8805110240C105AEAC6486CD /* Pods-iRevenue.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = 2KAL3NND99;
 				FRAMEWORK_SEARCH_PATHS = (

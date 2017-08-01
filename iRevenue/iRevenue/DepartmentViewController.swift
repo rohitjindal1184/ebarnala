@@ -51,7 +51,15 @@ class DepartmentViewController: UIViewController, UICollectionViewDelegate, UICo
             seque = "police"
         }else if(indexPath.row == 3){
             seque = "electricity"
+        }else if(indexPath.row == 4){
+            seque = "education"
+        }else if(indexPath.row == 5){
+            seque = "welfare"
+        }else if(indexPath.row == 6){
+            seque = "welfare"
         }
+        
+        
         self.performSegue(withIdentifier: seque, sender: nil)
     }
     /*

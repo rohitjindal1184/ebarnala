@@ -11,8 +11,9 @@ import Parse
 import Bolts
 import Fabric
 import Crashlytics
+import MessageUI
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,MFMailComposeViewControllerDelegate {
 
     var window: UIWindow?
 
@@ -21,8 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         sleep(UInt32(3.0))
         Fabric.with([Crashlytics.self])
         let configuration = ParseClientConfiguration {
-            $0.applicationId = "rx1o0R1FvNnwSmFthwHGxCswqGgNgdPQuPykR5mz"
-            $0.clientKey = "CcChT6cYmvLLjowhceFX2Hjjkq6f7I42CoyVLsad"
+            $0.applicationId = "7f203sxJvfna4XkTOZviJEeNXxVa1r4pKy0Og3gf"
+            $0.clientKey = "57b8W6IYSCMivIGltnaWBT0oly5IRlcWKzHkEBca"
             $0.server = "https://parseapi.back4app.com"
         }
         Parse.initialize(with: configuration)
@@ -50,6 +51,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    class func getDelegateRef()-> AppDelegate {
+        return UIApplication.shared.delegate as! AppDelegate
+    }
+
+    func call(btn:UIButton){
+        if let url = URL(string: "tel://" + (btn.titleLabel?.text)!), UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
+
+    }
+    func email(btn:UIButton){
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self // Extremely important to set the --mailComposeDelegate-- property, NOT the --delegate-- property
+        
+        mailComposerVC.setToRecipients([(btn.titleLabel?.text)!])
+        if MFMailComposeViewController.canSendMail() {
+            window?.rootViewController?.present(mailComposerVC, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+        
     }
 
 

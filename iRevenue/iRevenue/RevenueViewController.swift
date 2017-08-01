@@ -16,10 +16,11 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
     @IBOutlet weak var view1: UIView!
     @IBOutlet weak var lblpatwar: UILabel!
     @IBOutlet weak var lblpatwariName: UILabel!
-    @IBOutlet weak var lblpatwariMob: UILabel!
-    @IBOutlet weak var lblTehsildarMob: UILabel!
     @IBOutlet weak var lblTehsildarName: UILabel!
-
+    @IBOutlet weak var btnPatwariMob: UIButton!
+    @IBOutlet weak var btnTehsildarMob: UIButton!
+    @IBOutlet weak var btnKangoMob: UIButton!
+    
     @IBOutlet weak var lblKnagoo: UILabel!
     @IBOutlet weak var lblTehsil: UILabel!
     @IBOutlet weak var btnTehsil: UIButton!
@@ -51,6 +52,7 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
         view1.layer.borderWidth = 2.0
         view2.layer.borderWidth = 2.0
         view3.layer.borderWidth = 2.0
+        self.navigationController?.navigationBar.tintColor = UIColor.colorFromCode(0xED4738)
 
         // Do any additional setup after loading the view.
     }
@@ -103,10 +105,23 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
                 self.arrTehsil = objects
 //                self.selectedTehsil = objects?[0]
 //                self.lblTehsil.text = objects?[0].object(forKey: "TEHSILNAME") as? String
+            }else{
+                let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+                
             }
         }
         
     }
+    @IBAction func action(_ sender: Any) {
+        let btn = sender as? UIButton
+            AppDelegate.getDelegateRef().call(btn: btn!)
+        
+        
+    }
+    
+
     func getKangoo() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         let tehsilQuery = PFQuery(className: "KangoData")
@@ -116,6 +131,11 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
                 self.arrKangoo = objects
                 self.getPatwari()
               //  self.getKangooWithTehID(id: (self.selectedTehsil?.object(forKey: "TEHSIL_ID") as? String)!)
+            }else{
+                let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+                
             }
         }
         
@@ -129,6 +149,11 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
             if(error == nil){
                 self.arrPatwari = objects
                 self.combineData()
+            }else{
+                let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+                
             }
         }
     }
@@ -168,12 +193,14 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
     }
     func showDataWithIndex(index:Int){
         let obj = arrCombined[index]
-        lblpatwariName.text = obj.object(forKey: "patwari") as? String
-        lblpatwariMob.text = obj.object(forKey: "patwariMob") as? String
+        lblpatwariName.text = obj.object(forKey: "patwari") as? String 
+        btnPatwariMob.setTitle(obj.object(forKey: "patwariMob") as? String, for: .normal)
         lblKangooName.text = obj.object(forKey: "kanungoName") as? String
-        lblkangoomobile.text = obj.object(forKey: "kanungoMobile") as? String
         lblTehsildarName.text = obj.object(forKey: "thesildarName") as? String
-        lblTehsildarMob.text = obj.object(forKey: "tehMob") as? String
+        
+        btnTehsildarMob.setTitle(obj.object(forKey: "tehMob") as? String, for: .normal)
+        btnKangoMob.setTitle(obj.object(forKey: "kanungoMobile") as? String, for: .normal)
+
 
     }
     func getKangooWithTehID(id:String)->[PFObject]{

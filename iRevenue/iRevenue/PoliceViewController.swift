@@ -60,8 +60,15 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
         hospitalQuery.limit = 1000
         hospitalQuery.findObjectsInBackground { (objects, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
+            if(error == nil){
             self.areas = objects
             self.getPSData(id: (objects?[0].object(forKey: "PS_id") as? NSNumber)!)
+            }else{
+                let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+                
+            }
         }
 
     }
@@ -70,6 +77,7 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
         let psDataQuery = PFQuery(className: "PoliceStation")
         psDataQuery.whereKey("PS_id", equalTo: id)
         psDataQuery.findObjectsInBackground { (objects, error) in
+            if(error == nil){
             if let object = objects?[0] {
                 self.PoliceObject = object
                 MBProgressHUD.hide(for: self.view, animated: true)
@@ -80,6 +88,12 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
                 self.lblEmailID?.text = object.object(forKey: "emailid") as? String
                 self.getDSPData(id: (object.object(forKey: "DSP") as? String)!)
             }
+            }else{
+                let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+                
+            }
         }
     }
     func getDSPData(id:String){
@@ -87,21 +101,35 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
         let psDataQuery = PFQuery(className: "DSP")
         psDataQuery.getObjectInBackground(withId: id, block: { (object, error) in
                 MBProgressHUD.hide(for: self.view, animated: true)
+            if(error == nil){
                 self.dspObject = object
                 self.lbldspName?.text = object?.object(forKey: "name") as? String
                 self.lbldspmobile?.text = object?.object(forKey: "phoneno") as? String
                 self.lbldspLandline?.text = object?.object(forKey: "mobile") as? String
+            }else{
+                let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+                
+            }
         })
     }
     func getSSP(){
         let psDataQuery = PFQuery(className: "DSP")
         psDataQuery.whereKey("isSSP", equalTo: true)
         psDataQuery.findObjectsInBackground { (objects, error) in
+            if(error == nil){
             if let object = objects?[0] {
                 self.sspObject = object
                 self.lblsspName?.text = object.object(forKey: "name") as? String
                 self.lblsspland?.text = object.object(forKey: "phoneno") as? String
                 self.lblsspname?.text = object.object(forKey: "mobile") as? String
+            }
+            }else{
+                let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
+                alert.show()
+                
+                
             }
 
         }
