@@ -34,6 +34,8 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
     var arrCombined = [PFObject]()
     var selectedTehsil:PFObject?
     var selectedKangoo:PFObject?
+    var isLoaded = false
+    var isBtnSelected = false
 
     var kangooArrteh:[PFObject]?
     var picker:Int = 0
@@ -53,6 +55,9 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
         view2.layer.borderWidth = 2.0
         view3.layer.borderWidth = 2.0
         self.navigationController?.navigationBar.tintColor = UIColor.colorFromCode(0xED4738)
+        view1.isHidden = true
+        view2.isHidden = true
+        view3.isHidden = true
 
         // Do any additional setup after loading the view.
     }
@@ -75,6 +80,7 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
 //        }
     }
     @IBAction func actionTehsil(_ sender: Any) {
+        if(isLoaded){
             let pickerVw = PickerView.instanceFromNib()
             pickerVw.frame = self.view.bounds
             pickerVw.delegate = self
@@ -82,6 +88,11 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
             pickerVw.arrayObj = arrCombined
             self.picker = 0
             self.view.addSubview(pickerVw)
+        }else{
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.label.text = "Please Wait. We are loading data."
+            isBtnSelected = true
+        }
     }
     @IBAction func actionKanungo(_ sender: Any) {
         let pickerVw = PickerView.instanceFromNib()
@@ -96,10 +107,8 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
     @IBAction func actionPatwar(_ sender: Any) {
     }
     func getTehsil() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         let tehsilQuery = PFQuery(className: "TehsilData")
         tehsilQuery.findObjectsInBackground { (objects, error) in
-            MBProgressHUD.hide(for: self.view, animated: true)
             if(error == nil){
                 self.getKangoo()
                 self.arrTehsil = objects
@@ -123,10 +132,8 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
     
 
     func getKangoo() {
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         let tehsilQuery = PFQuery(className: "KangoData")
         tehsilQuery.findObjectsInBackground { (objects, error) in
-            MBProgressHUD.hide(for: self.view, animated: true)
             if(error == nil){
                 self.arrKangoo = objects
                 self.getPatwari()
@@ -141,11 +148,9 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
         
     }
     func getPatwari(){
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         let tehsilQuery = PFQuery(className: "PatwarData")
         tehsilQuery.limit = 1000
         tehsilQuery.findObjectsInBackground { (objects, error) in
-            MBProgressHUD.hide(for: self.view, animated: true)
             if(error == nil){
                 self.arrPatwari = objects
                 self.combineData()
@@ -189,9 +194,18 @@ class RevenueViewController: UIViewController, PickerViewProtocol {
                 }
             }
         }
-        self.showDataWithIndex(index: 0)
+        MBProgressHUD.hide(for: self.view, animated: true)
+
+        isLoaded = true
+        if(isBtnSelected){
+            actionTehsil(UIButton())
+        }
     }
     func showDataWithIndex(index:Int){
+        view1.isHidden = false
+        view2.isHidden = false
+        view3.isHidden = false
+
         let obj = arrCombined[index]
         lblpatwariName.text = obj.object(forKey: "patwari") as? String 
         btnPatwariMob.setTitle(obj.object(forKey: "patwariMob") as? String, for: .normal)

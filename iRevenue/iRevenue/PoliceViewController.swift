@@ -27,6 +27,8 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
     @IBOutlet weak var view3: UIView!
     @IBOutlet weak var view2: UIView!
     @IBOutlet weak var view1: UIView!
+    var isLoaded = false
+    var isBtnSelected = false
 
     var sspObject:PFObject?
     var dspObject:PFObject?
@@ -34,7 +36,6 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         getArea()
         getSSP()
         scroll?.contentSize = CGSize(width: 0, height: 1200)
@@ -48,6 +49,10 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
             NSForegroundColorAttributeName : UIColor.colorFromCode(0x6AB193)
         ]
         self.navigationController?.navigationBar.tintColor = UIColor.colorFromCode(0x6AB193)
+        view1.isHidden = true
+        view2.isHidden = true
+        view3.isHidden = true
+
         // Do any additional setup after loading the view.
     }
 
@@ -62,7 +67,11 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
             MBProgressHUD.hide(for: self.view, animated: true)
             if(error == nil){
             self.areas = objects
-            self.getPSData(id: (objects?[0].object(forKey: "PS_id") as? NSNumber)!)
+                self.isLoaded = true
+                if(self.isBtnSelected){
+                    self.isBtnSelected = false
+                    self.actionSelectArea(UIButton())
+                }
             }else{
                 let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
                 alert.show()
@@ -87,6 +96,7 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
                 self.lblLandline?.text = object.object(forKey: "phoneno") as? String
                 self.lblEmailID?.text = object.object(forKey: "emailid") as? String
                 self.getDSPData(id: (object.object(forKey: "DSP") as? String)!)
+
             }
             }else{
                 let alert = UIAlertView(title: "Error", message: error?.localizedDescription, delegate: self, cancelButtonTitle: "OK")
@@ -97,10 +107,10 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
         }
     }
     func getDSPData(id:String){
-        MBProgressHUD.showAdded(to: self.view, animated: true)
         let psDataQuery = PFQuery(className: "DSP")
         psDataQuery.getObjectInBackground(withId: id, block: { (object, error) in
-                MBProgressHUD.hide(for: self.view, animated: true)
+            MBProgressHUD.hide(for: self.view, animated: true)
+
             if(error == nil){
                 self.dspObject = object
                 self.lbldspName?.text = object?.object(forKey: "name") as? String
@@ -141,6 +151,7 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
     }
 
     @IBAction func actionSelectArea(_ sender: Any) {
+        if(isLoaded){
         let pickerVw = PickerView.instanceFromNib()
         pickerVw.frame = self.view.bounds
         pickerVw.delegate = self
@@ -148,6 +159,12 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
 
         pickerVw.arrayObj = areas!
         self.view.addSubview(pickerVw)
+        }else{
+            let hud = MBProgressHUD.showAdded(to: self.view, animated: true)
+            hud.label.text = "Please Wait. We are loading data."
+            isBtnSelected = true
+        }
+
     }
     @IBAction func actionGetDirection(_ sender: Any) {
         performSegue(withIdentifier: "DirectionVC", sender: sender)
@@ -168,6 +185,10 @@ class PoliceViewController: UIViewController, PickerViewProtocol {
 
     }
     func rowSelected(index: Int) {
+        view1.isHidden = false
+        view2.isHidden = false
+        view3.isHidden = false
+
         self.getPSData(id: (self.areas?[index].object(forKey: "PS_id") as? NSNumber)!)
     }
     /*

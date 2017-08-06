@@ -50,27 +50,40 @@ class DepartmentViewController: UIViewController, UICollectionViewDelegate, UICo
         }else if(indexPath.row == 2){
             seque = "police"
         }else if(indexPath.row == 3){
-            seque = "electricity"
+            seque = "food"
+            self.performSegue(withIdentifier: seque, sender: "electricity")
+            return
         }else if(indexPath.row == 4){
             seque = "education"
         }else if(indexPath.row == 5){
             seque = "welfare"
         }else if(indexPath.row == 6){
-            seque = "welfare"
+            seque = "food"
+            self.performSegue(withIdentifier: seque, sender: "Suvida")
+            return
+        }else if(indexPath.row == 7){
+            seque = "food"
+            self.performSegue(withIdentifier: seque, sender: "Food")
+            return
+
         }
         
         
         self.performSegue(withIdentifier: seque, sender: nil)
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "food"){
+            let vc = segue.destination as? FoodTableViewController
+            vc?.className = (sender as? String)!
+        }
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
 
 }
 

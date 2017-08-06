@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		7F5DF06E0769F55650A35636 /* Pods_iRevenue.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C197E42710846F6B182B3FFA /* Pods_iRevenue.framework */; };
+		ED04D6381F3714EF007596A0 /* rts.pdf in Resources */ = {isa = PBXBuildFile; fileRef = ED04D6371F3714EF007596A0 /* rts.pdf */; };
+		ED04D63A1F37158E007596A0 /* RTSViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED04D6391F37158E007596A0 /* RTSViewController.swift */; };
 		ED1548FD1F30979E009EFAA9 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1548FB1F30979E009EFAA9 /* DetailTableViewCell.swift */; };
 		ED1548FE1F30979E009EFAA9 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED1548FC1F30979E009EFAA9 /* DetailTableViewCell.xib */; };
 		ED1549001F309FB1009EFAA9 /* EducationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1548FF1F309FB1009EFAA9 /* EducationTableViewController.swift */; };
 		ED1549021F30B097009EFAA9 /* WelfareTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1549011F30B096009EFAA9 /* WelfareTableViewController.swift */; };
+		ED1549041F30FBB4009EFAA9 /* FoodTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1549031F30FBB4009EFAA9 /* FoodTableViewController.swift */; };
 		ED157CD41ED1B3460019E1F5 /* KnowOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD31ED1B3460019E1F5 /* KnowOptionViewController.swift */; };
 		ED157CD71ED1C13A0019E1F5 /* ContactDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD61ED1C13A0019E1F5 /* ContactDetailViewController.swift */; };
 		ED157CD91ED1D0E80019E1F5 /* DirectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED157CD81ED1D0E80019E1F5 /* DirectionViewController.swift */; };
@@ -53,10 +56,13 @@
 		2F72973626A09547A387AF0F /* Pods-iRevenue.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRevenue.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iRevenue/Pods-iRevenue.debug.xcconfig"; sourceTree = "<group>"; };
 		8805110240C105AEAC6486CD /* Pods-iRevenue.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRevenue.release.xcconfig"; path = "Pods/Target Support Files/Pods-iRevenue/Pods-iRevenue.release.xcconfig"; sourceTree = "<group>"; };
 		C197E42710846F6B182B3FFA /* Pods_iRevenue.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iRevenue.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED04D6371F3714EF007596A0 /* rts.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rts.pdf; sourceTree = "<group>"; };
+		ED04D6391F37158E007596A0 /* RTSViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTSViewController.swift; sourceTree = "<group>"; };
 		ED1548FB1F30979E009EFAA9 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		ED1548FC1F30979E009EFAA9 /* DetailTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailTableViewCell.xib; sourceTree = "<group>"; };
 		ED1548FF1F309FB1009EFAA9 /* EducationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EducationTableViewController.swift; sourceTree = "<group>"; };
 		ED1549011F30B096009EFAA9 /* WelfareTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelfareTableViewController.swift; sourceTree = "<group>"; };
+		ED1549031F30FBB4009EFAA9 /* FoodTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FoodTableViewController.swift; sourceTree = "<group>"; };
 		ED157CD31ED1B3460019E1F5 /* KnowOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KnowOptionViewController.swift; sourceTree = "<group>"; };
 		ED157CD61ED1C13A0019E1F5 /* ContactDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactDetailViewController.swift; sourceTree = "<group>"; };
 		ED157CD81ED1D0E80019E1F5 /* DirectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				ED86BD2B1ED0518300507D1C /* iRevenue */,
+				ED1549031F30FBB4009EFAA9 /* FoodTableViewController.swift */,
 				ED86BD2A1ED0518300507D1C /* Products */,
 				5E36209B112D79D08EDC52F8 /* Pods */,
 				FF5E6BA52089D7B40D52D918 /* Frameworks */,
@@ -150,6 +157,7 @@
 		ED86BD2B1ED0518300507D1C /* iRevenue */ = {
 			isa = PBXGroup;
 			children = (
+				ED04D6371F3714EF007596A0 /* rts.pdf */,
 				ED86BD3E1ED1851300507D1C /* Subclass */,
 				ED86BD2C1ED0518300507D1C /* AppDelegate.swift */,
 				ED86BD411ED1915D00507D1C /* Assets.xcassets */,
@@ -176,6 +184,7 @@
 				ED591FD81F2A2F4B00780B4E /* HospitalStaffViewController.swift */,
 				ED1548FF1F309FB1009EFAA9 /* EducationTableViewController.swift */,
 				ED1549011F30B096009EFAA9 /* WelfareTableViewController.swift */,
+				ED04D6391F37158E007596A0 /* RTSViewController.swift */,
 			);
 			path = iRevenue;
 			sourceTree = "<group>";
@@ -274,6 +283,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED04D6381F3714EF007596A0 /* rts.pdf in Resources */,
 				ED3CE7C11EF2C5B600E76E11 /* PickerView.xib in Resources */,
 				ED86BD371ED0518300507D1C /* LaunchScreen.storyboard in Resources */,
 				ED47CA341EE1831200583A27 /* GoogleService-Info.plist in Resources */,
@@ -362,8 +372,10 @@
 				ED86BD2F1ED0518300507D1C /* DashBoardiewController.swift in Sources */,
 				ED157CD71ED1C13A0019E1F5 /* ContactDetailViewController.swift in Sources */,
 				ED86BD2D1ED0518300507D1C /* AppDelegate.swift in Sources */,
+				ED1549041F30FBB4009EFAA9 /* FoodTableViewController.swift in Sources */,
 				ED157CD91ED1D0E80019E1F5 /* DirectionViewController.swift in Sources */,
 				ED3CE7C31EF2C9BF00E76E11 /* PoliceViewController.swift in Sources */,
+				ED04D63A1F37158E007596A0 /* RTSViewController.swift in Sources */,
 				ED28BEF21F1B86D90036D6EB /* ElectricityViewController.swift in Sources */,
 				ED3CE7BF1EF2C59F00E76E11 /* PickerView.swift in Sources */,
 				ED79374E1F1E200500E3847D /* DepartmentViewController.swift in Sources */,

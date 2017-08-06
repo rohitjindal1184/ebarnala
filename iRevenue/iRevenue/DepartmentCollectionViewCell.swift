@@ -55,7 +55,13 @@ class DepartmentModal{
         suvida.icon = #imageLiteral(resourceName: "suvida")
         suvida.backGroundColor = UIColor.colorFromCode(0x6AB193)
         
-        return [revnue, hospital,police, elect, education, welfare, suvida]
+        let food = DepartmentModal()
+        food.title = "Food and Suply"
+        food.icon = #imageLiteral(resourceName: "food")
+        food.backGroundColor = UIColor.colorFromCode(0x02CBFF)
+
+        
+        return [revnue, hospital,police, elect, education, welfare, suvida, food]
     }
 }
 

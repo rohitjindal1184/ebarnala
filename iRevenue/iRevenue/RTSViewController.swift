@@ -1,22 +1,24 @@
 //
-//  FardViewController.swift
+//  RTSViewController.swift
 //  iRevenue
 //
-//  Created by MobileProgramming on 5/21/17.
+//  Created by MobileProgramming on 8/6/17.
 //  Copyright © 2017 Rohit Jindal. All rights reserved.
 //
 
 import UIKit
 import MBProgressHUD
-class FardViewController: UIViewController, UIWebViewDelegate {
 
-    @IBOutlet weak var webView: UIWebView!
+class RTSViewController: UIViewController {
+    @IBOutlet weak var webview: UIWebView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        let url = URL(string: "http://www.plrs.org.in")
-        webView.loadRequest(URLRequest(url: url!))
+        let path = Bundle.main.path(forResource: "rts", ofType: "pdf")
+        let targetURL = URL(fileURLWithPath: path!)
+        let request = URLRequest(url: targetURL)
+        webview.loadRequest(request)
         MBProgressHUD.showAdded(to: self.view, animated: true)
-
         // Do any additional setup after loading the view.
     }
 
@@ -26,11 +28,10 @@ class FardViewController: UIViewController, UIWebViewDelegate {
     }
     func webViewDidFinishLoad(_ webView: UIWebView) {
         MBProgressHUD.hide(for: self.view, animated: true)
-
-    }
-    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
         
     }
+
+
     /*
     // MARK: - Navigation
 
