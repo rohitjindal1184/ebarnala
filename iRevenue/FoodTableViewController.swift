@@ -39,7 +39,14 @@ class FoodTableViewController: UITableViewController, DetailCellProtocol,PickerV
             table = "ElectricityNew"
             villageKey = "villages"
             longtitude = "longtitude"
-        }else{
+        }else if(className == "health"){
+            titleLabel = "Health"
+            color = UIColor.colorFromCode(0x82C5E5)
+            table = "Health"
+            villageKey = "currentPosting"
+            longtitude = "longtitude"
+        }
+        else{
             titleLabel = "Suvida Kendra"
             color = UIColor.colorFromCode(0x6AB193)
             table = "sevaKendra"
@@ -133,6 +140,7 @@ villageKey = "village"
     }
     func getFood() {
         let tehsilQuery = PFQuery(className: table)
+        tehsilQuery.limit = 1000
         tehsilQuery.findObjectsInBackground { (objects, error) in
             MBProgressHUD.hide(for: self.view, animated: true)
             if(error == nil){
@@ -157,6 +165,9 @@ villageKey = "village"
             let arrVillage = strVillage?.components(separatedBy: "/")
             for str in arrVillage!{
                let village = str.replacingOccurrences(of: "/", with: "")
+                if(checkDuplicateVillage(village: village)){
+                    continue
+                }
                 let villageObject = PFObject(className: "Food")
                 villageObject.setObject(village, forKey: "village")
                 villages.append(villageObject)
@@ -167,7 +178,15 @@ villageKey = "village"
         selectArea()
         }
     }
-    
+    func checkDuplicateVillage(village:String)->Bool{
+        for villObj in self.villages{
+            if(village == villObj.object(forKey: "village") as? String){
+                return true
+            }
+        }
+        
+        return false
+    }
     func showDataForVillage(village:PFObject){
         selectedObjects.removeAll()
         for obj in self.objects{

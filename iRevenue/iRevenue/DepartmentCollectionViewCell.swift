@@ -51,8 +51,8 @@ class DepartmentModal{
         welfare.backGroundColor = UIColor.colorFromCode(0x82C5E5)
 
         let suvida = DepartmentModal()
-        suvida.title = "Suvida Kendra"
-        suvida.icon = #imageLiteral(resourceName: "suvida")
+        suvida.title = "Sewa Kendra"
+        suvida.icon = #imageLiteral(resourceName: "seva")
         suvida.backGroundColor = UIColor.colorFromCode(0x6AB193)
         
         let food = DepartmentModal()

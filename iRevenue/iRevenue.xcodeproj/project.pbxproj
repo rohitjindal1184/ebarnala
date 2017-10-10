@@ -48,8 +48,14 @@
 		ED86BD461ED1996100507D1C /* FardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD451ED1996100507D1C /* FardViewController.swift */; };
 		ED86BD481ED19EB500507D1C /* RevenueDepttViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD471ED19EB500507D1C /* RevenueDepttViewController.swift */; };
 		ED86BD4A1ED1A5A100507D1C /* RevenueInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD491ED1A5A100507D1C /* RevenueInfoViewController.swift */; };
+		EDA517871F8357EC00EFDAA8 /* Stampduty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA517861F8357EC00EFDAA8 /* Stampduty.storyboard */; };
+		EDA517891F83593400EFDAA8 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA517881F83593400EFDAA8 /* CalculatorViewController.swift */; };
+		EDA87E6F1F8C9D3D001BD52F /* StampTotalDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA87E6E1F8C9D3D001BD52F /* StampTotalDutyViewController.swift */; };
+		EDA87E711F8CADA1001BD52F /* StampValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA87E701F8CADA1001BD52F /* StampValueViewController.swift */; };
 		EDB396761EED95FC0032EB9C /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDB396751EED95FC0032EB9C /* MapKit.framework */; };
 		EDB396781EED96D60032EB9C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB396771EED96D60032EB9C /* MapViewController.swift */; };
+		EDCF286F1F662DC6005BCB8F /* StampDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCF286E1F662DC6005BCB8F /* StampDutyViewController.swift */; };
+		EDCF28711F6641A5005BCB8F /* SubDeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCF28701F6641A5005BCB8F /* SubDeedViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,8 +104,14 @@
 		ED86BD451ED1996100507D1C /* FardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FardViewController.swift; sourceTree = "<group>"; };
 		ED86BD471ED19EB500507D1C /* RevenueDepttViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueDepttViewController.swift; sourceTree = "<group>"; };
 		ED86BD491ED1A5A100507D1C /* RevenueInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueInfoViewController.swift; sourceTree = "<group>"; };
+		EDA517861F8357EC00EFDAA8 /* Stampduty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stampduty.storyboard; sourceTree = "<group>"; };
+		EDA517881F83593400EFDAA8 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
+		EDA87E6E1F8C9D3D001BD52F /* StampTotalDutyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampTotalDutyViewController.swift; sourceTree = "<group>"; };
+		EDA87E701F8CADA1001BD52F /* StampValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampValueViewController.swift; sourceTree = "<group>"; };
 		EDB396751EED95FC0032EB9C /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		EDB396771EED96D60032EB9C /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		EDCF286E1F662DC6005BCB8F /* StampDutyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StampDutyViewController.swift; sourceTree = "<group>"; };
+		EDCF28701F6641A5005BCB8F /* SubDeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubDeedViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +197,11 @@
 				ED1548FF1F309FB1009EFAA9 /* EducationTableViewController.swift */,
 				ED1549011F30B096009EFAA9 /* WelfareTableViewController.swift */,
 				ED04D6391F37158E007596A0 /* RTSViewController.swift */,
+				EDCF286E1F662DC6005BCB8F /* StampDutyViewController.swift */,
+				EDCF28701F6641A5005BCB8F /* SubDeedViewController.swift */,
+				EDA517861F8357EC00EFDAA8 /* Stampduty.storyboard */,
+				EDA87E6E1F8C9D3D001BD52F /* StampTotalDutyViewController.swift */,
+				EDA87E701F8CADA1001BD52F /* StampValueViewController.swift */,
 			);
 			path = iRevenue;
 			sourceTree = "<group>";
@@ -195,6 +212,7 @@
 				ED86BD3F1ED1853300507D1C /* DashboardButton.swift */,
 				ED1548FB1F30979E009EFAA9 /* DetailTableViewCell.swift */,
 				ED1548FC1F30979E009EFAA9 /* DetailTableViewCell.xib */,
+				EDA517881F83593400EFDAA8 /* CalculatorViewController.swift */,
 			);
 			name = Subclass;
 			sourceTree = "<group>";
@@ -289,6 +307,7 @@
 				ED47CA341EE1831200583A27 /* GoogleService-Info.plist in Resources */,
 				ED86BD421ED1915D00507D1C /* Assets.xcassets in Resources */,
 				ED1548FE1F30979E009EFAA9 /* DetailTableViewCell.xib in Resources */,
+				EDA517871F8357EC00EFDAA8 /* Stampduty.storyboard in Resources */,
 				ED86BD321ED0518300507D1C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -371,9 +390,14 @@
 				ED86BD461ED1996100507D1C /* FardViewController.swift in Sources */,
 				ED86BD2F1ED0518300507D1C /* DashBoardiewController.swift in Sources */,
 				ED157CD71ED1C13A0019E1F5 /* ContactDetailViewController.swift in Sources */,
+				EDA517891F83593400EFDAA8 /* CalculatorViewController.swift in Sources */,
+				EDCF286F1F662DC6005BCB8F /* StampDutyViewController.swift in Sources */,
+				EDCF28711F6641A5005BCB8F /* SubDeedViewController.swift in Sources */,
 				ED86BD2D1ED0518300507D1C /* AppDelegate.swift in Sources */,
+				EDA87E711F8CADA1001BD52F /* StampValueViewController.swift in Sources */,
 				ED1549041F30FBB4009EFAA9 /* FoodTableViewController.swift in Sources */,
 				ED157CD91ED1D0E80019E1F5 /* DirectionViewController.swift in Sources */,
+				EDA87E6F1F8C9D3D001BD52F /* StampTotalDutyViewController.swift in Sources */,
 				ED3CE7C31EF2C9BF00E76E11 /* PoliceViewController.swift in Sources */,
 				ED04D63A1F37158E007596A0 /* RTSViewController.swift in Sources */,
 				ED28BEF21F1B86D90036D6EB /* ElectricityViewController.swift in Sources */,

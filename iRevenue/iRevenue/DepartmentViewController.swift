@@ -46,7 +46,9 @@ class DepartmentViewController: UIViewController, UICollectionViewDelegate, UICo
         if(indexPath.row == 0){
                 seque = "revenue"
         }else if(indexPath.row == 1){
-                seque = "health"
+            seque = "food"
+            self.performSegue(withIdentifier: seque, sender: "health")
+            return
         }else if(indexPath.row == 2){
             seque = "police"
         }else if(indexPath.row == 3){
