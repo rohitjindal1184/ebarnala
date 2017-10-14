@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "tabrts.png",
+      "filename" : "1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tabrts@2x.png",
+      "filename" : "2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "tabrts@3x.png",
+      "filename" : "24_7_monitoring_response.png",
       "scale" : "3x"
     }
   ],

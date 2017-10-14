@@ -44,16 +44,23 @@ class StampDutyViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let deed =  self.deeds[indexPath.row]
         let deedcode = deed.object(forKey: "deedcode") as? String
-        let arrDeed = ["1", "2", "3" , "11"]
+        let arrDeed = ["1", "3" , "11"]
         if(!arrDeed.contains(deedcode!)){
         performSegue(withIdentifier: "fixed", sender: deed)
-        }else if((deedcode! == "13") || (deedcode! == "2")){
-            performSegue(withIdentifier: "Value", sender: deed)
+        } else{
+            performSegue(withIdentifier: "subdeed", sender: deed)
+
+            
         }
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "fixed"){
         let vc = segue.destination as? StampTotalDutyViewController
         vc?.deedObject = (sender as? PFObject)!
+        }else{
+            let vc = segue.destination as? StampValueViewController
+            vc?.deedObject = (sender as? PFObject)!
+        }
     }
     func getDEO() {
         MBProgressHUD.showAdded(to: self.view, animated: true)

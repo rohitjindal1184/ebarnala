@@ -13,17 +13,201 @@
         <!--Calculator-->
         <scene sceneID="73T-l5-adn">
             <objects>
-                <viewController title="Calculator" id="pvx-Cz-ga0" customClass="StampTotalDutyViewController" customModule="iRevenue" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Calculator" id="pvx-Cz-ga0" customClass="StampValueViewController" customModule="iRevenue" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="iKw-0E-KqI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMx-5q-FWe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D2f-kZ-Al3" customClass="DropDownButton" customModule="iRevenue" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="38" width="315" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="wGH-XN-Wnz"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Select SRO">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionSRO:" destination="pvx-Cz-ga0" eventType="touchUpInside" id="DdD-qc-hsN"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8b-mA-Jf8" customClass="DropDownButton" customModule="iRevenue" customModuleProvider="target">
+                                        <rect key="frame" x="31" y="88" width="315" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="5za-5F-fpT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Select Village">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionVillage:" destination="pvx-Cz-ga0" eventType="touchUpInside" id="6IO-DD-Lh0"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OzA-Qj-Qdr" customClass="DropDownButton" customModule="iRevenue" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="138" width="315" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="nQZ-XH-XrU"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Select Land Type">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionlandtype:" destination="pvx-Cz-ga0" eventType="touchUpInside" id="BmP-bY-4Zn"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Land constructed?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S2u-9B-zRW">
+                                        <rect key="frame" x="31" y="344" width="159.5" height="23"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="UcV-ux-Pfk">
+                                        <rect key="frame" x="288" y="340" width="49" height="31"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="47" id="a15-FI-pBP"/>
+                                            <constraint firstAttribute="height" constant="31" id="cOx-6P-oH8"/>
+                                        </constraints>
+                                        <connections>
+                                            <action selector="swictValueChanged:" destination="pvx-Cz-ga0" eventType="valueChanged" id="F7E-eE-N2c"/>
+                                        </connections>
+                                    </switch>
+                                    <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Enter Number Of Floors" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9eZ-yv-Du3">
+                                        <rect key="frame" x="40" y="391" width="295" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="4Ci-BN-xDB"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="bezel" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20L-hO-hvD">
+                                        <rect key="frame" x="258" y="243" width="99" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="7R6-TS-GGy"/>
+                                            <constraint firstAttribute="width" constant="99" id="mm3-mM-h2e"/>
+                                        </constraints>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter Land Area in Sqaure yard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="7Di-Mu-Ig1">
+                                        <rect key="frame" x="11" y="248" width="247" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="BwV-q3-gjp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Land Value is 0 Per Square Yard " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0QB-sz-JaX">
+                                        <rect key="frame" x="64" y="293" width="247.5" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvT-Xb-6up" customClass="DropDownButton" customModule="iRevenue" customModuleProvider="target">
+                                        <rect key="frame" x="30" y="188" width="315" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="bep-ac-hKq"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="Select Area">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="actionArea:" destination="pvx-Cz-ga0" eventType="touchUpInside" id="ObK-Bo-Flq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="7Di-Mu-Ig1" firstAttribute="top" secondItem="dvT-Xb-6up" secondAttribute="bottom" constant="30" id="0Cw-aJ-wzX"/>
+                                    <constraint firstItem="0QB-sz-JaX" firstAttribute="top" secondItem="20L-hO-hvD" secondAttribute="bottom" constant="20" id="17L-cS-f4F"/>
+                                    <constraint firstItem="7Di-Mu-Ig1" firstAttribute="leading" secondItem="fMx-5q-FWe" secondAttribute="leading" constant="11" id="2Gs-QF-ajv"/>
+                                    <constraint firstItem="D2f-kZ-Al3" firstAttribute="leading" secondItem="fMx-5q-FWe" secondAttribute="leading" constant="30" id="2PU-l3-ct2"/>
+                                    <constraint firstItem="S2u-9B-zRW" firstAttribute="leading" secondItem="fMx-5q-FWe" secondAttribute="leading" constant="31" id="2mq-bi-aZS"/>
+                                    <constraint firstAttribute="trailing" secondItem="OzA-Qj-Qdr" secondAttribute="trailing" constant="30" id="2x0-U8-KGW"/>
+                                    <constraint firstAttribute="trailing" secondItem="UcV-ux-Pfk" secondAttribute="trailing" constant="40" id="40p-n1-qKN"/>
+                                    <constraint firstAttribute="trailing" secondItem="D2f-kZ-Al3" secondAttribute="trailing" constant="30" id="6Wi-cN-9WJ"/>
+                                    <constraint firstItem="9eZ-yv-Du3" firstAttribute="top" secondItem="UcV-ux-Pfk" secondAttribute="bottom" constant="20" id="CBX-rI-71U"/>
+                                    <constraint firstItem="dvT-Xb-6up" firstAttribute="top" secondItem="OzA-Qj-Qdr" secondAttribute="bottom" constant="20" id="HUw-zG-By3"/>
+                                    <constraint firstItem="OzA-Qj-Qdr" firstAttribute="leading" secondItem="fMx-5q-FWe" secondAttribute="leading" constant="30" id="LFk-EK-dGd"/>
+                                    <constraint firstItem="OzA-Qj-Qdr" firstAttribute="top" secondItem="L8b-mA-Jf8" secondAttribute="bottom" constant="20" id="M6f-m9-jFv"/>
+                                    <constraint firstItem="UcV-ux-Pfk" firstAttribute="centerY" secondItem="S2u-9B-zRW" secondAttribute="centerY" id="Mvq-gq-pZh"/>
+                                    <constraint firstItem="20L-hO-hvD" firstAttribute="leading" secondItem="7Di-Mu-Ig1" secondAttribute="trailing" id="Rmb-DF-xCf"/>
+                                    <constraint firstAttribute="trailing" secondItem="20L-hO-hvD" secondAttribute="trailing" constant="18" id="TMG-jN-g2s"/>
+                                    <constraint firstItem="20L-hO-hvD" firstAttribute="top" secondItem="dvT-Xb-6up" secondAttribute="bottom" constant="25" id="UoB-s2-idK"/>
+                                    <constraint firstItem="L8b-mA-Jf8" firstAttribute="leading" secondItem="fMx-5q-FWe" secondAttribute="leading" constant="31" id="aAS-0x-UHk"/>
+                                    <constraint firstItem="D2f-kZ-Al3" firstAttribute="centerX" secondItem="fMx-5q-FWe" secondAttribute="centerX" id="aiE-eL-3DL"/>
+                                    <constraint firstAttribute="trailing" secondItem="9eZ-yv-Du3" secondAttribute="trailing" constant="40" id="duP-KS-Ok1"/>
+                                    <constraint firstAttribute="trailing" secondItem="dvT-Xb-6up" secondAttribute="trailing" constant="30" id="gwO-pp-gIg"/>
+                                    <constraint firstItem="L8b-mA-Jf8" firstAttribute="top" secondItem="D2f-kZ-Al3" secondAttribute="bottom" constant="20" id="hta-eW-0FM"/>
+                                    <constraint firstItem="dvT-Xb-6up" firstAttribute="leading" secondItem="fMx-5q-FWe" secondAttribute="leading" constant="30" id="iFl-4y-WtC"/>
+                                    <constraint firstItem="S2u-9B-zRW" firstAttribute="top" secondItem="0QB-sz-JaX" secondAttribute="bottom" constant="30" id="mzl-3p-UG7"/>
+                                    <constraint firstAttribute="trailing" secondItem="L8b-mA-Jf8" secondAttribute="trailing" constant="29" id="o3w-7J-ngS"/>
+                                    <constraint firstItem="D2f-kZ-Al3" firstAttribute="top" secondItem="fMx-5q-FWe" secondAttribute="top" constant="38" id="tW6-QS-jhD"/>
+                                    <constraint firstItem="0QB-sz-JaX" firstAttribute="centerX" secondItem="fMx-5q-FWe" secondAttribute="centerX" id="xHf-6X-5xG"/>
+                                    <constraint firstItem="9eZ-yv-Du3" firstAttribute="leading" secondItem="fMx-5q-FWe" secondAttribute="leading" constant="40" id="yhS-Ti-W5A"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fMx-5q-FWe" firstAttribute="bottom" secondItem="Cfx-zy-WcW" secondAttribute="bottom" id="1DA-xP-rC1"/>
+                            <constraint firstItem="fMx-5q-FWe" firstAttribute="top" secondItem="iKw-0E-KqI" secondAttribute="top" id="GkH-XU-maK"/>
+                            <constraint firstItem="fMx-5q-FWe" firstAttribute="trailing" secondItem="Cfx-zy-WcW" secondAttribute="trailing" id="w1n-D2-dNU"/>
+                            <constraint firstItem="fMx-5q-FWe" firstAttribute="leading" secondItem="Cfx-zy-WcW" secondAttribute="leading" id="xRf-zo-dMb"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Cfx-zy-WcW"/>
                     </view>
+                    <connections>
+                        <outlet property="btnArea" destination="dvT-Xb-6up" id="Aec-Vl-15J"/>
+                        <outlet property="btnLand" destination="OzA-Qj-Qdr" id="gVn-M4-g4c"/>
+                        <outlet property="btnSro" destination="D2f-kZ-Al3" id="anR-jb-8jD"/>
+                        <outlet property="btnVillage" destination="L8b-mA-Jf8" id="T7Z-sM-LlT"/>
+                        <outlet property="lblValue" destination="0QB-sz-JaX" id="fgL-Gb-32k"/>
+                        <outlet property="swicth" destination="UcV-ux-Pfk" id="U0W-Uc-ZT2"/>
+                        <outlet property="txtArea" destination="20L-hO-hvD" id="PlP-3v-bHm"/>
+                        <outlet property="txtFloor" destination="9eZ-yv-Du3" id="9Dd-Mg-Ja1"/>
+                        <segue destination="XPR-HN-fd1" kind="show" identifier="total" id="hDH-Su-ENb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mgj-xk-g5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-810" y="-1094"/>
+            <point key="canvasLocation" x="-810.39999999999998" y="-1094.3028485757122"/>
+        </scene>
+        <!--totalValue-->
+        <scene sceneID="7Bf-ay-nIo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="totalValue" id="XPR-HN-fd1" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4gn-EY-1S6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-162" y="-1081"/>
         </scene>
     </scenes>
 </document>

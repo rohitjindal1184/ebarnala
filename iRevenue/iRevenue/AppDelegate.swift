@@ -12,6 +12,7 @@ import Bolts
 import Fabric
 import Crashlytics
 import MessageUI
+import IQKeyboardManagerSwift
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate,MFMailComposeViewControllerDelegate {
 
@@ -27,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate,MFMailComposeViewControlle
             $0.server = "https://parseapi.back4app.com"
         }
         Parse.initialize(with: configuration)
+        IQKeyboardManager.sharedManager().enable = true
+
         // Override point for customization after application launch.
         return true
     }

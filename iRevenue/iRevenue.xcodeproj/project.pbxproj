@@ -48,6 +48,7 @@
 		ED86BD461ED1996100507D1C /* FardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD451ED1996100507D1C /* FardViewController.swift */; };
 		ED86BD481ED19EB500507D1C /* RevenueDepttViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD471ED19EB500507D1C /* RevenueDepttViewController.swift */; };
 		ED86BD4A1ED1A5A100507D1C /* RevenueInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86BD491ED1A5A100507D1C /* RevenueInfoViewController.swift */; };
+		ED9432941F904FF100DA4CF2 /* DropDownButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9432931F904FF100DA4CF2 /* DropDownButton.swift */; };
 		EDA517871F8357EC00EFDAA8 /* Stampduty.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EDA517861F8357EC00EFDAA8 /* Stampduty.storyboard */; };
 		EDA517891F83593400EFDAA8 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA517881F83593400EFDAA8 /* CalculatorViewController.swift */; };
 		EDA87E6F1F8C9D3D001BD52F /* StampTotalDutyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDA87E6E1F8C9D3D001BD52F /* StampTotalDutyViewController.swift */; };
@@ -104,6 +105,7 @@
 		ED86BD451ED1996100507D1C /* FardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FardViewController.swift; sourceTree = "<group>"; };
 		ED86BD471ED19EB500507D1C /* RevenueDepttViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueDepttViewController.swift; sourceTree = "<group>"; };
 		ED86BD491ED1A5A100507D1C /* RevenueInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RevenueInfoViewController.swift; sourceTree = "<group>"; };
+		ED9432931F904FF100DA4CF2 /* DropDownButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownButton.swift; sourceTree = "<group>"; };
 		EDA517861F8357EC00EFDAA8 /* Stampduty.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Stampduty.storyboard; sourceTree = "<group>"; };
 		EDA517881F83593400EFDAA8 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
 		EDA87E6E1F8C9D3D001BD52F /* StampTotalDutyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampTotalDutyViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 				EDA517861F8357EC00EFDAA8 /* Stampduty.storyboard */,
 				EDA87E6E1F8C9D3D001BD52F /* StampTotalDutyViewController.swift */,
 				EDA87E701F8CADA1001BD52F /* StampValueViewController.swift */,
+				ED9432931F904FF100DA4CF2 /* DropDownButton.swift */,
 			);
 			path = iRevenue;
 			sourceTree = "<group>";
@@ -336,13 +339,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iRevenue-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		ED3CE7BB1EF1AC0600E76E11 /* ShellScript */ = {
@@ -364,9 +370,18 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iRevenue/Pods-iRevenue-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/Parse/Parse.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Parse.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -392,6 +407,7 @@
 				ED157CD71ED1C13A0019E1F5 /* ContactDetailViewController.swift in Sources */,
 				EDA517891F83593400EFDAA8 /* CalculatorViewController.swift in Sources */,
 				EDCF286F1F662DC6005BCB8F /* StampDutyViewController.swift in Sources */,
+				ED9432941F904FF100DA4CF2 /* DropDownButton.swift in Sources */,
 				EDCF28711F6641A5005BCB8F /* SubDeedViewController.swift in Sources */,
 				ED86BD2D1ED0518300507D1C /* AppDelegate.swift in Sources */,
 				EDA87E711F8CADA1001BD52F /* StampValueViewController.swift in Sources */,
